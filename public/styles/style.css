@@ -4,5 +4,12 @@ body {
 
 nav ul li {
     text-decoration: none;
-    display: inline;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+div {
+    width: 35%;
+    height: 20vh;
+    display: inline-block;
 }
