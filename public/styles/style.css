@@ -1,0 +1,8 @@
+body {
+    background-color: lightblue;
+}
+
+nav ul li {
+    text-decoration: none;
+    display: inline;
+}
