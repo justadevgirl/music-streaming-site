@@ -1,5 +1,6 @@
 :root {
     --black: #2E2C2C;
+    --darkblack: #1a1919;
     --yellow: #FFDE59;
     --gold: #F8A70E;
     --brown: #9B6941;
@@ -15,31 +16,42 @@
     font-variation-settings:
       "wdth" 100;
   }
-html {
+
+  body, html {
     height: 100%;
-}
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
 
 body {
-    background: linear-gradient(180deg, var(--gold) 0%, var(--black) 80%);
+    background: linear-gradient(180deg, var(--gold) 0%, var(--black) 55%);
     color: var(--white);
     font-family: "Fredoka", sans-serif;
     background-repeat: no-repeat;
-
+    background-attachment: fixed;
 }
 
 body a {
     color: var(--white);
 }
 
-h1 {
-    color: var(--yellow);
+nav ul {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul li {
     text-decoration: none;
-    display: inline-block;
     padding: 0 20px;
     margin-bottom: 2em;
+    list-style-type: none;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    margin: 2em auto;
 }
 
 .index-main {
@@ -51,13 +63,14 @@ nav ul li {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 2em;
 } 
 
 .column1 {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    flex: 1;     
+    flex: 2;     
 }
 
 .column2 {
@@ -67,33 +80,38 @@ nav ul li {
     flex: 3;     
 }
 
+/* circular track playing */
 .currently-playing {
     border-radius: 50%;
     width: 20em;
     height: 20em;
     background-color: var(--yellow);
+    box-shadow: 0 0 10px var(--yellow);
 }
 
 .current-artist {
     text-transform: lowercase;
+    margin-top: 1em;
 }
 
 .current-artist h1 {
     color: var(--white);
     text-decoration: none;
     font-size: 2em;
+    font-weight: 400;
     margin-bottom: 0;
 }
 
 .current-title h2 {
-    color: var(--lightgray);
+    color: var(--black);
     font-size: 1.5em;
     font-weight: 200;
     margin-top: 0;
 }
 
-.fa-solid {
-    margin-left: 1em;
+i {
+    margin-left: 0.45em;
+    font-size: .75em;
 }
 
 .time {
@@ -128,8 +146,170 @@ nav ul li {
     border: 18px solid #FEBE6E;     
     border-left-color: #9B6941;
     border-bottom-color: #9B6941;
-    transform: rotate(90deg);  /* (per * 1.8) - 45 */
+    transform: rotate(5deg);  /* (per * 1.8) - 45 */
   /* Exa: 50% - (50 * 1.8) - 45 = 45deg */
   /* background: pink; */
   }
   
+  .playing-song-title {
+    font-size: 3em;
+  }
+  
+  .soundwave {
+    height: 10em;
+    background-image: url(../images/yellow-soundwave.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: -5em;
+  }
+
+  /* volume, playback, track share/repeat/shuffle/add to list icons */
+  .playback-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2em;
+    justify-content: center;
+    align-items: center;
+} 
+
+  .volume-settings {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 2em;
+    justify-content: center;
+  }
+
+   /* CSS for the volume bar */
+   .volume-bar {
+    width: 150px;
+    height: 20px;
+    background-color: var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .volume-level {
+    height: 100%;
+    background-color: var(--yellow);
+  }
+
+  /* CSS for the volume control slidey ball thingy */
+  .volume-control {
+    width: 150px;
+    height: 40px;
+    margin-left: -150px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: transparent;
+    margin: 0;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--gold);
+  }
+
+  .playback-settings {
+    font-size: 5em;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #gold {
+    color: var(--gold);
+    font-size: 1.5em;
+  }
+
+  .track-setting {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+  }
+
+  .track-setting i {
+    margin: .5em;
+  }
+
+  /* top charts */
+
+  .hex-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2em;
+    justify-content: space-around;
+} 
+
+.top-hex-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2; 
+    align-items: center;
+}
+
+ .hexagon1 {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/pexels-ruby-ruby-12395155.jpg');
+    background-size: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .hexagon2 {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/pexels-antoni-shkraba-production-8044083.jpg');
+    background-size: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .hexagon3 {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/pexels-cottonbro-studio-7086304.jpg');
+    background-size: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .hexagon4 {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/pexels-martin-lopez-2240772.jpg');
+    background-size: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    flex: 1;
+  }
+
+  .hex-row > div.column {
+    background-color: var(--darkblack);
+    color: var(--white);
+    width: 15em;
+    padding: 1em;
+    border-radius: 20px;
+    box-shadow: 0 0 20px var(--gold);
+  }
+
+  .hex-row h2 {
+    text-align: center;
+  }
+
+  .now-playing-song {
+    height: 8em;
+    width: 8em;
+    border-radius: 50%;
+    background-image: url(../images/pexels-spring-toan-3704041.jpg);
+    background-size: cover;
+    z-index: 1;
+  }

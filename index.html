@@ -23,6 +23,9 @@
           <a href="#">Search Bar</a>
         </li>
         <li>
+          <a href="top.html">Top Charts</a>
+        </li>
+        <li>
           <a href="playlists/">Playlists</a>
         </li>
         <li>
@@ -43,7 +46,13 @@
     <main class="index-main">
       <div class="row">
         <div class="column1">
-          <div class="currently-playing"></div>
+          <div
+            class="currently-playing"
+            style="
+              background-image: url(public/images/pexels-spring-toan-3704041.jpg);
+              background-size: cover;
+            "
+          ></div>
           <div class="progress">
             <div class="barOverflow">
               <div class="bar"></div>
@@ -60,6 +69,42 @@
           </div>
           <div class="current-title">
             <h2>Next to You</h2>
+          </div>
+          <div class="playing-song-title">
+            Elevator
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-download"></i>
+          </div>
+          <div class="soundwave">
+            <!-- <img src="public/images/yellow-soundwave.gif" /> -->
+          </div>
+        </div>
+      </div>
+      <div class="playback-row">
+        <div class="volume-settings">
+          <div class="volume-down">
+            <i class="fa-solid fa-volume-xmark"></i>&nbsp;&nbsp;&nbsp;
+          </div>
+
+          <div class="volume-bar">
+            <div class="volume-level"></div>
+          </div>
+
+          <div class="volume-control">
+            <input type="range" min="0" max="100" value="50" step="1" />
+          </div>
+          <div class="volume-up">
+            &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-volume-high"></i>
+          </div>
+          </div>
+          <div class="playback-settings">
+            <i class="fa-solid fa-backward-step"></i>
+            <span id="gold"><i class="fa-solid fa-circle-play"></i></span>&nbsp;
+            <i class="fa-solid fa-forward-step"></i>
+          </div>
+
+          <div class="track-setting">
+            <i class="fa-solid fa-share-nodes"></i><i class="fa-solid fa-repeat"></i><i class="fa-solid fa-shuffle"></i><i class="fa-solid fa-circle-plus"></i>
           </div>
         </div>
       </div>
